@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Payment</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+      background: #ffffff;
+      min-height: 100vh;
+      color: #111;
+    }
+
+    .top {
+      height: 205px;
+      background: linear-gradient(135deg, #1298ff, #1688f4);
+    }
+
+    .card {
+      margin-top: -20px;
+      background: white;
+      border-radius: 38px 38px 0 0;
+      min-height: calc(100vh - 185px);
+      padding: 75px 28px 40px;
+    }
+
+    .logo {
+      text-align: center;
+      font-size: 46px;
+      font-weight: 800;
+      letter-spacing: -2px;
+      margin-bottom: 20px;
+    }
+
+    .logo span {
+      display: block;
+      font-size: 25px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      margin-top: -8px;
+    }
+
+    .subtitle {
+      text-align: center;
+      font-size: 18px;
+      margin-bottom: 45px;
+    }
+
+    .form {
+      max-width: 520px;
+      margin: auto;
+    }
+
+    .field {
+      position: relative;
+      margin-bottom: 25px;
+    }
+
+    .field label {
+      position: absolute;
+      left: 28px;
+      top: -11px;
+      background: white;
+      padding: 0 8px;
+      color: #999;
+      font-size: 17px;
+    }
+
+    .field input {
+      width: 100%;
+      height: 78px;
+      border: 2px solid #aaa;
+      border-radius: 18px;
+      padding: 0 25px;
+      font-size: 20px;
+      outline: none;
+    }
+
+    .field input:focus {
+      border-color: #168ff7;
+    }
+
+    .notice {
+      text-align: center;
+      font-size: 13px;
+      color: #777;
+      line-height: 1.5;
+      margin-top: 15px;
+    }
+
+    .button {
+      margin-top: 70px;
+      width: 100%;
+      height: 67px;
+      border: 0;
+      border-radius: 22px;
+      background: #168ff7;
+      color: white;
+      font-size: 21px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .button:active {
+      transform: scale(.99);
+    }
+
+    .footer {
+      margin-top: 30px;
+      text-align: center;
+      color: #999;
+      font-size: 15px;
+    }
+
+    @media (max-width: 420px) {
+      .top {
+        height: 185px;
+      }
+
+      .card {
+        padding-top: 65px;
+      }
+
+      .logo {
+        font-size: 40px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="top"></div>
+
+  <main class="card">
+
+    <div class="logo">
+      PAYMENT
+      <span>WALLET</span>
+    </div>
+
+    <div class="subtitle">
+      Payments, made simple
+    </div>
+
+    <form class="form" id="paymentForm">
+
+      <div class="field">
+        <label>Wallet ID</label>
+        <input
+          id="wallet"
+          type="text"
+          placeholder="07XXXXXXXX"
+          autocomplete="off"
+          required
+        />
+      </div>
+
+      <div class="field">
+        <label>Amount</label>
+        <input
+          id="amount"
+          type="number"
+          placeholder="0.00"
+          min="0"
+          step="0.01"
+          required
+        />
+      </div>
+
+      <div class="notice">
+        By continuing, the information you enter will be sent
+        to the owner of this payment page.
+      </div>
+
+      <button class="button" type="submit">
+        Continue
+      </button>
+
+      <div class="footer">
+        Secure payment request
+      </div>
+
+    </form>
+
+  </main>
+
+  <script>
+    document
+      .getElementById("paymentForm")
+      .addEventListener("submit", function(e) {
+        e.preventDefault();
+
+        const wallet = document.getElementById("wallet").value.trim();
+        const amount = document.getElementById("amount").value.trim();
+
+        if (!wallet || !amount) {
+          alert("Please complete both fields.");
+          return;
+        }
+
+        alert("Information ready to be submitted.");
+      });
+  </script>
+
+</body>
+</html>
